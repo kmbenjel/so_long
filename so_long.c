@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:11:24 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/06/19 09:26:23 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/06/19 09:34:55 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int ac, char **av)
 	if (ac == 2 && av[1])
 	{
 		mlx_init();
+		mlx_new_window();
 	}
 	return (0);
 }
