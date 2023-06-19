@@ -6,12 +6,13 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:20:44 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/06/19 09:22:00 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/06/19 09:23:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+# include <mlx.h>
 
 void	so_long(void);
 
