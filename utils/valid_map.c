@@ -1,4 +1,5 @@
 #include "../so_long.h"
+
 static void	free_map(char **map, int height)
 {
 	int	i;
@@ -12,12 +13,12 @@ static void	free_map(char **map, int height)
 	free(map);
 }
 
-int	is_valid_character(char c)
+static int	is_valid_character(char c)
 {
 	return (c == '0' || c == '1' || c == 'C' || c == 'E' || c == 'P');
 }
 
-int	free_line_and_close_fd(int fd, char *line)
+static int	free_line_and_close_fd(int fd, char *line)
 {
 	free(line);
 	close(fd);
