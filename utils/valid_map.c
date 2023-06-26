@@ -28,17 +28,15 @@ static int	free_line_and_close_fd(int fd, char *line)
 int	validate_map(const char *filename)
 {
 	int		fd;
-	char	*line;
 	t_map	map;
-	int		line_len;
 	int		i;
-	char	c;
+
 
 	map = {0};
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (0);
-	line = get_next_line(fd);
+	map.line = get_next_line(fd);
 	while (line)
 	{
 		line_len = ft_strlen(line);

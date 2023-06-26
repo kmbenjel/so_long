@@ -32,13 +32,13 @@ typedef struct s_map
 {
 	char	**lines;
 	char	*line;
+	char	character;
+	int		collectible_count;
 	int		player_count;
 	int		exit_count;
-	int		collectible_count;
+	int		line_len;
 	int		width;
 	int		height;
-	char	character;
-
 }			t_map;
 
 #endif
