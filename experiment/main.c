@@ -18,11 +18,14 @@ int	main(void)
 	void	*mlx;
 	void	*img;
 	void	*win;
+	char	*path = "textures/coin.xpm";
+	int h;
+	int w;
 
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 500, 500, "so_long");
-	img = mlx_
-	mlx_put_image_to_window(mlx,win, void *img_ptr, int x, int y)
+	img = mlx_xpm_file_to_image(mlx, path, &w, &h);
+	mlx_put_image_to_window(mlx,win, img, 5, 5);
 	mlx_loop(mlx);
 	return (0);
 }
