@@ -15,10 +15,13 @@
 # include "libft/libft.h"
 # include <mlx.h>
 
-struct s_data
+typedef struct s_data
 {
-    /* data */
-} t_data;
-
+	void	*mlx;
+	void	*image;
+	char	*relative_path;
+	int		width;
+	int		height;
+}			t_data;
 
 #endif

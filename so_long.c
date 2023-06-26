@@ -19,5 +19,6 @@ int	main(int ac, char **av)
 		mlx_init();
 		mlx_new_window();
 	}
+	else
 	return (0);
 }
