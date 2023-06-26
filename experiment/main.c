@@ -21,11 +21,19 @@ int	main(void)
 	char	*path = "textures/coin.xpm";
 	int h;
 	int w;
+	int	i;
+	int	j;
 
+	i = 0;
+	j = 0;
 	mlx = mlx_init();
 	win = mlx_new_window(mlx, 500, 500, "so_long");
 	img = mlx_xpm_file_to_image(mlx, path, &w, &h);
-	mlx_put_image_to_window(mlx,win, img, 5, 5);
+	while (i < 500)
+	{
+		mlx_put_image_to_window(mlx,win, img, 100, 10);
+	}
+	
 	mlx_loop(mlx);
 	return (0);
 }
