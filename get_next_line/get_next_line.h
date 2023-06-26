@@ -17,7 +17,7 @@
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char *s1, char *s2, int on_off);
+static char	*ft_strjoin(char *s1, char *s2, int on_off);
 char	*until_nl(char *s);
 char	*after_nl(char *s);
 

@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 // Allocate for a string containing characters
 // of the buffer until the first new line
 
-char	*ft_strjoin(char *s1, char *s2, int on_off)
+static char	*ft_strjoin(char *s1, char *s2, int on_off)
 {
 	char			*dest;
 	unsigned int	i;
