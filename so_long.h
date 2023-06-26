@@ -15,6 +15,10 @@
 # include "libft/libft.h"
 # include <mlx.h>
 
-void	so_long(void);
+struct s_data
+{
+    /* data */
+} t_data;
+
 
 #endif
