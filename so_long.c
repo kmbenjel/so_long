@@ -12,14 +12,16 @@
 
 #include "so_long.h"
 
-int	valid_map(char *map)
+int	valid_filename(char *filename)
 {
-	
+	int filename_length;
+file
+	if (ft_strlen(map) >= 3 && !ft_strncmp(map + (ft_strlen(manpp))))
 	return (1);
 }
 int	main(int ac, char **av)
 {
-	if (ac == 2 && av[1] && valid_map(av[1]))
+	if (ac == 2 && av[1] && valid_filename(av[1]))
 	{
 		mlx_init();
 	}
