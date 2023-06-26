@@ -23,8 +23,6 @@ int	valid_filename(char *filename)
 	return (0);
 }
 
-
-
 int	main(int ac, char **av)
 {
 	if (ac == 2 && valid_filename(av[1]))
