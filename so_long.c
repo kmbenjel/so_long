@@ -20,8 +20,7 @@ int	valid_filename(char *filename)
 	if (filename_length >= 4 && !ft_strncmp(filename + (filename_length - 3),
 			".ber", 3))
 		return (1);
-	ft_putendl_fd("Bad filename!");
-	exit;
+	return (0);
 }
 int	main(int ac, char **av)
 {
@@ -30,6 +29,11 @@ int	main(int ac, char **av)
 		mlx_init();
 	}
 	else
-		ft_putstr_fd("Wrong number of parameters!", 1);
+	{
+		if (ac != 2)
+			ft_putstr_fd("Wrong number of parameters!", 1);
+		else
+			ft_putendl_fd("Bad filename!", 1);
+	}
 	return (0);
 }
