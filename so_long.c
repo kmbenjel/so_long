@@ -20,5 +20,6 @@ int	main(int ac, char **av)
 		mlx_new_window();
 	}
 	else
+		ft_putchar_fd("Kindly", 1);
 	return (0);
 }
