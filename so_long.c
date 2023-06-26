@@ -17,9 +17,9 @@ int	main(int ac, char **av)
 	if (ac == 2 && av[1])
 	{
 		mlx_init();
-		mlx_new_window();
+
 	}
 	else
-		ft_putchar_fd("Kindly", 1);
+		ft_putstr_fd("-->	Wrong number of parameters\n", 1);
 	return (0);
 }
