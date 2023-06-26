@@ -5,6 +5,13 @@ int	is_valid_character(char c)
 	return (c == '0' || c == '1' || c == 'C' || c == 'E' || c == 'P');
 }
 
+int free_line_and_close_fd(int fd, char *line)
+{
+    free(line);
+    close(fd);
+    return (0);
+}
+
 int	validate_map(const char *filename)
 {
 	int fd;
@@ -21,11 +28,7 @@ int	validate_map(const char *filename)
 		int i = 0;
 
 		if (line_len == 0)
-		{
-			free(line);
-			close(fd);
-			return (0);
-		}
+            return free_line_and_close_fd(fd, line);
 
 		if (map.width == 0)
 			map.width = line_len;
