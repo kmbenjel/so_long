@@ -12,16 +12,16 @@
 
 #include "so_long.h"
 
-void valid_map(char *map)
+int	valid_map(char *map)
 {
 	
+	return (1);
 }
 int	main(int ac, char **av)
 {
 	if (ac == 2 && av[1] && valid_map(av[1]))
 	{
 		mlx_init();
-
 	}
 	else
 		ft_putstr_fd("Wrong number of parameters!", 1);
