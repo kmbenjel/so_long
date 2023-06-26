@@ -14,10 +14,14 @@
 
 int	valid_filename(char *filename)
 {
-	int filename_length;
-file
-	if (ft_strlen(map) >= 3 && !ft_strncmp(map + (ft_strlen(manpp))))
-	return (1);
+	int	filename_length;
+
+	filename_length = ft_strlen(filename);
+	if (filename_length >= 4 && !ft_strncmp(filename + (filename_length - 3),
+			".ber", 3))
+		return (1);
+	ft_putendl_fd("Bad filename!");
+	exit;
 }
 int	main(int ac, char **av)
 {
