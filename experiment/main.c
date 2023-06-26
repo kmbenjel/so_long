@@ -18,6 +18,7 @@ int	main(void)
 	void	*mlx;
 
 	mlx = mlx_init();
+	mlx_new_window(mlx, 500, 500, "so_long");
+	mlx_loop(mlx);
 	return (0);
-	dddd
 }
