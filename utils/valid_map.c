@@ -4,6 +4,7 @@ int is_valid_character(char c)
 {
     return (c == '0' || c == '1' || c == 'C' || c == 'E' || c == 'P');
 }
+
 int validate_map(const char *filename)
 {
     int fd;
@@ -14,7 +15,7 @@ int validate_map(const char *filename)
     if (fd < 0)
         return 0;
 
-    while (get_next_line(fd, &line))
+    while (get_next_line(fd))
     {
         int line_len = ft_strlen(line);
         int i = 0;
@@ -63,8 +64,5 @@ int validate_map(const char *filename)
 
     if (map.player_count != 1 || map.exit_count != 1 || map.collectible_count == 0)
         return 0;
-
-    // Additional validation rules if needed
-
     return 1;
 }
