@@ -5,65 +5,57 @@ int	is_valid_character(char c)
 	return (c == '0' || c == '1' || c == 'C' || c == 'E' || c == 'P');
 }
 
-int free_line_and_close_fd(int fd, char *line)
+int	free_line_and_close_fd(int fd, char *line)
 {
-    free(line);
-    close(fd);
-    return (0);
+	free(line);
+	close(fd);
+	return (0);
 }
 
 int	validate_map(const char *filename)
 {
-	int fd;
-	char *line;
-	t_map map = {0};
+	int		fd;
+	char	*line;
+	t_map	map;
+	int		line_len;
+	int		i;
+	char	c;
 
+	map = {0};
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (0);
 	line = get_next_line(fd);
 	while (line)
 	{
-		int line_len = ft_strlen(line);
-		int i = 0;
-
+		line_len = ft_strlen(line);
+		i = 0;
 		if (line_len == 0)
-            return free_line_and_close_fd(fd, line);
-
+			return (free_line_and_close_fd(fd, line));
 		if (map.width == 0)
 			map.width = line_len;
 		else if (line_len != map.width)
+			return (free_line_and_close_fd(fd, line));
+		while (line[i])
 		{
-			free(line);
-			close(fd);
-			return (0);
-			while (line[i])
-			{
-				char c = line[i];
-				if (!is_valid_character(c))
-				{
-					free(line);
-					close(fd);
-					return (0);
-				}
-
-				if (c == 'P')
-					map.player_count++;
-				else if (c == 'E')
-					map.exit_count++;
-				else if (c == 'C')
-					map.collectible_count++;
-
-				i++;
-			}
-			map.height++;
-			free(line);
-			line = get_next_line(fd);
+			c = line[i];
+			if (!is_valid_character(c))
+               return (free_line_and_close_fd(fd, line)); 
+			if (c == 'P')
+				map.player_count++;
+			else if (c == 'E')
+				map.exit_count++;
+			else if (c == 'C')
+				map.collectible_count++;
+			i++;
 		}
-		close(fd);
-		if (map.player_count != 1 || map.exit_count != 1
-			|| map.collectible_count == 0)
-			return (0);
-		return (1);
+		map.height++;
+		free(line);
+		line = get_next_line(fd);
 	}
+	close(fd);
+	if (map.player_count != 1 || map.exit_count != 1
+		|| map.collectible_count == 0)
+		return (0);
+	return (1);
 }
