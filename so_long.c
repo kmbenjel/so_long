@@ -17,14 +17,15 @@ int	valid_filename(char *filename)
 	int	filename_length;
 
 	filename_length = ft_strlen(filename);
-	if (filename_length >= 4 && !ft_strncmp(filename + (filename_length - 3),
+	if (filename_length >= 5 && !ft_strncmp(filename + (filename_length - 4),
 			".ber", 3))
 		return (1);
 	return (0);
 }
+
 int	main(int ac, char **av)
 {
-	if (ac == 2 && av[1] && valid_filename(av[1]))
+	if (ac == 2 && valid_filename(av[1]))
 	{
 		mlx_init();
 	}
