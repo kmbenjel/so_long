@@ -19,4 +19,5 @@ int	main(void)
 
 	mlx = mlx_init();
 	return (0);
+	dddd
 }
