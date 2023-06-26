@@ -16,9 +16,13 @@
 int	main(void)
 {
 	void	*mlx;
+	void	*img;
+	void	*win;
 
 	mlx = mlx_init();
-	mlx_new_window(mlx, 500, 500, "so_long");
+	win = mlx_new_window(mlx, 500, 500, "so_long");
+	img = mlx_
+	mlx_put_image_to_window(mlx,win, void *img_ptr, int x, int y)
 	mlx_loop(mlx);
 	return (0);
 }
