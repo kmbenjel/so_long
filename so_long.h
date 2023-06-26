@@ -25,4 +25,13 @@ typedef struct s_data
 	int		height;
 }			t_data;
 
+typedef struct s_map
+{
+    int player_count;
+    int exit_count;
+    int collectible_count;
+    int width;
+    int height;
+} t_map;
+
 #endif
