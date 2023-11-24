@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:11:24 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/06/25 17:17:37 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/24 04:02:34 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main(int ac, char **av)
 	else
 	{
 		if (ac != 2)
-			ft_putstr_fd("Wrong number of parameters!", 1);
+			ft_putstr_fd("Error:\n\tWrong number of parameters!", 1);
 		else
-			ft_putendl_fd("Bad filename!", 1);
+			ft_putendl_fd("Error:\n\tBad filename!", 1);
 	}
 	return (0);
 }
