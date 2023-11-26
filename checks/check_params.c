@@ -6,16 +6,20 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:04:47 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 19:25:49 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/26 19:48:25 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../main.h"
 
-int	bad_filename(char *filename)
+int	ft_bad_filename(char *filepath)
 {
-	int	filename_length;
+	int		filename_length;
+	char	*filename;
 
+	filename = filepath + ft_strlen(filepath);
+	while (*filename != '/' && filename != filepath)
+		filename--;
 	filename_length = ft_strlen(filename);
 	if (filename_length >= 5 && !ft_strncmp(filename + (filename_length - 4),
 			".ber", 3))
@@ -23,14 +27,14 @@ int	bad_filename(char *filename)
 	return (1);
 }
 
-void	check_params(int ac, char **av)
+void	ft_check_params(int ac, char **av)
 {
 	if (ac != 2)
 	{
 		perror("Error:\n\tWrong number of parameters!");
 		exit;
 	}
-	if (bad_filename(av[1]))
+	if (ft_bad_filename(av[1]))
 	{
 		perror("Error:\n\tBad filename!");
 		exit;
