@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:20:44 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 20:09:34 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/26 22:19:09 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <mlx.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_data
 {
