@@ -6,14 +6,13 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/18 02:03:55 by kbenjell          #+#    #+#              #
-#    Updated: 2023/06/26 12:35:35 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/11/26 03:25:30 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
-SSRC = server.c
-CSRC = client.c
+SRC = 
 
 SERVER = server
 CLIENT = client
