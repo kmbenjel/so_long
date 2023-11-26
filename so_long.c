@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:11:24 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 08:02:56 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/26 11:56:54 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main(int ac, char **av)
 	else
 	{
 		if (ac != 2)
-			perror("Error:\n\tWrong number of parameters!", 1);
+			perror("Error:\n\tWrong number of parameters!");
 		else
-			perror("Error:\n\tBad filename!", 1);
+			perror("Error:\n\tBad filename!");
 	}
 	return (0);
 }
