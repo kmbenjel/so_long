@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 23:59:24 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 22:44:57 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/27 03:00:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 // Allocate for a string containing characters
 // of the buffer until the first new line
 
-static char	*ft_strjoin_on_off(char *s1, char *s2, int on_off)
+char	*ft_strjoin_on_off(char *s1, char *s2, int on_off)
 {
 	char			*dest;
 	unsigned int	i;

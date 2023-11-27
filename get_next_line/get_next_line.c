@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 23:59:14 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/03/29 12:38:23 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/27 03:01:11 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -47,11 +47,11 @@ static char	*joinline(int fd, char **line, int *rc)
 	cb = current_buffer(fd, rc, cb);
 	if (!cb)
 		return (NULL);
-	*line = ft_strjoin(*line, cb, 1);
+	*line = ft_strjoin_on_off(*line, cb, 1);
 	while (*rc > 0 && !new_line_in(cb))
 	{
 		cb = current_buffer(fd, rc, cb);
-		*line = ft_strjoin(*line, cb, 1);
+		*line = ft_strjoin_on_off(*line, cb, 1);
 	}
 	if (new_line_in(*line))
 	{
@@ -65,7 +65,7 @@ static char	*joinline(int fd, char **line, int *rc)
 // IMPORTANT
 // in every call of joinline(), the first `*line` assignment will give
 // it the `tail` from the previous call, that tail contains all what's
-// after the new line found in the previous call till the end of 
+// after the new line found in the previous call till the end of
 // the file being read. before the joinline() call ends, *line will
 // be trimmed to stop at the next new line, whereas tail will contain
 // the rest of the file being read since that new line
@@ -76,7 +76,7 @@ char	*get_next_line(int fd)
 	int			rc;
 	char		*line;
 
-	line = ft_strjoin("", "", 0);
+	line = ft_strjoin_on_off("", "", 0);
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		free(line);
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 	}
 	if (tail)
 	{
-		line = ft_strjoin(tail, line, 2);
+		line = ft_strjoin_on_off(tail, line, 2);
 		tail = NULL;
 	}
 	tail = joinline(fd, &line, &rc);
@@ -98,4 +98,3 @@ char	*get_next_line(int fd)
 // this occurs inside current_buffer()
 // `tail` represents all what's right after the line being extracted
 // till EOF
-

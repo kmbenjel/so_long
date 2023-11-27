@@ -6,13 +6,13 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 20:05:34 by kbenjell          #+#    #+#              #
-#    Updated: 2022/12/07 03:09:05 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/11/27 03:40:32 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 RM = rm -Rf
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
@@ -66,16 +66,16 @@ OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+	@	$(AR) $(NAME) $(OBJ)
 
 bonus : $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ_BONUS)
+	@	$(AR) $(NAME) $(OBJ_BONUS)
 
 clean :
-	$(RM) $(OBJ) 
-	$(RM) $(OBJ_BONUS)
+	@	$(RM) $(OBJ) 
+	@	$(RM) $(OBJ_BONUS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@	$(RM) $(NAME)
 
 re : fclean all bonus

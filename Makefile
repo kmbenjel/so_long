@@ -6,53 +6,35 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/18 02:03:55 by kbenjell          #+#    #+#              #
-#    Updated: 2023/11/26 03:25:30 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/11/27 03:54:24 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
-SRC = 
-
-SERVER = server
-CLIENT = client
-
-SSRC_B = server_bonus.c 
-CSRC_B = client_bonus.c
-
-SERVER_B = server_bonus
-CLIENT_B = client_bonus
+CFLAGS = -Wall -Wextra -Werror
+MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
+SRC =	main.c \
+	checks/*.c \
+	parsing/*.c \
+	get_next_line/*.c \
 
 LIBFT = libft/libft.a
-
-NAME = $(SERVER) $(CLIENT)
-
-BONUS = $(SERVER_B) $(CLIENT_B)
-
+NAME = so_long
 RM = rm -f
 
 all: $(NAME)
-bonus: $(BONUS)
 
-$(NAME): $(SSRC) $(CSRC)
-	@	make -C libft/
-	@	$(CC) $(CFLAGS) $(SSRC) $(LIBFT) -o $(SERVER)
-	@	$(CC) $(CFLAGS) $(CSRC) $(LIBFT) -o $(CLIENT)
+$(NAME): $(SRC)
+	@	make -C libft/ > /dev/null
+	@	$(CC) $(CFLAGS) $(MLX_FLAGS) $(SRC) $(LIBFT) -o $(NAME)
 	@	echo "\033[32m make: OK \033[0m"
-
-$(BONUS): $(SSRC_B) $(CSRC_B)
-	@	make -C libft/
-	@	$(CC) $(CFLAGS) $(SSRC_B) $(LIBFT) -o $(SERVER_B)
-	@	$(CC) $(CFLAGS) $(CSRC_B) $(LIBFT) -o $(CLIENT_B)
-	@	echo "\033[32m make bonus: OK \033[0m"
 
 clean:
 	@	make clean -C libft/ 
 	@	echo "\033[32m clean: OK \033[0m"
 
 fclean: clean
-	@	$(RM) $(SERVER) $(CLIENT) $(LIBFT)
-	@	$(RM) $(SERVER_B) $(CLIENT_B)
+	@	$(RM) $(NAME)
 	@	echo "\033[32m fclean: OK \033[0m"
 
 re: fclean all

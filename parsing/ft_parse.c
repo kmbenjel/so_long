@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:11:24 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 22:41:15 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/27 04:09:10 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ char	**ft_parse(char *filepath)
 	int		fd;
 
 	current_line = "";
+	fd = open(filepath, O_RDONLY);
 	if (fd < 0)
 		ft_perror();
-	fd = open(filepath, O_RDONLY);
 	while (current_line)
 	{
 		current_line = get_next_line(fd);

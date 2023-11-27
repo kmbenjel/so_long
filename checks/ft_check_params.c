@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_params.c                                     :+:      :+:    :+:   */
+/*   ft_check_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 19:04:47 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/26 19:48:25 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/27 04:06:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,7 @@ int	ft_bad_filename(char *filepath)
 void	ft_check_params(int ac, char **av)
 {
 	if (ac != 2)
-	{
 		perror("Error:\n\tWrong number of parameters!");
-		exit;
-	}
 	if (ft_bad_filename(av[1]))
-	{
 		perror("Error:\n\tBad filename!");
-		exit;
-	}
 }
