@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 09:20:44 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/11/27 04:41:36 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/11/27 08:54:39 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_data
 	int		window_height;
 	int		player_x;
 	int		player_y;
+	int		coins;
 }			t_data;
 
 typedef struct s_map
